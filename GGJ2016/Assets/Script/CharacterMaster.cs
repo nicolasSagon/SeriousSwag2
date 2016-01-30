@@ -10,6 +10,8 @@ public class CharacterMaster : MonoBehaviour {
 	private CharacterCasting castingScript;
 	public Text text;
 	private bool isCasting;
+	private bool rightCasting;
+	private bool leftCasting;
 	private bool lastCastingVal;
 
 	// Use this for initialization
@@ -31,21 +33,34 @@ public class CharacterMaster : MonoBehaviour {
 		
 		float trigger1 = CrossPlatformInputManager.GetAxis ("Fire1");
 		float trigger2 = CrossPlatformInputManager.GetAxis ("Fire2");
+
+		leftCasting = trigger1 == 1;
+		rightCasting = trigger2 == 1;
+
+		castingScript.isLeft = leftCasting;
+		castingScript.isRight = rightCasting;
 		
-		if (trigger1 == 1 && trigger2 == 1) {
-			this.isCasting = true;
-		} else {
-			this.isCasting = false;
-		}
+		isCasting = leftCasting || rightCasting;
 		
 		if (lastCastingVal != isCasting) {
 			setTextVisibility();
 			fpsScript.isActive = !isCasting;
 			castingScript.isActive = isCasting;
 			if(lastCastingVal == true && isCasting == false){
-				foreach(int movementId in castingScript.listMovementLeftArm){
-					Debug.Log("Move : " + movementId);
+				string movementLeft = "Left : ";
+				foreach(CharacterCasting.Movement movementId in castingScript.listMovementLeftArm){
+					movementLeft += movementId + " ";
 				}
+				if(movementLeft != "Left : ")
+					Debug.Log (movementLeft);
+
+				string movementRight = "Right : ";
+				foreach(CharacterCasting.Movement movementId in castingScript.listMovementRightArm){
+					movementRight += movementId + " ";
+				}
+				if(movementRight != "Right : ")
+					Debug.Log (movementRight);
+				castingScript.initInput();
 			}
 			lastCastingVal = isCasting;
 		}
