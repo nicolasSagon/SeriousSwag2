@@ -40,10 +40,10 @@ public class DialogController : MonoBehaviour {
 		foreach(string t in listDialog){
 			textComp.text="";
 			StartCoroutine (TypeText(t));
-			float time = t.Length*letterPause+2;
+			float time = t.Length*letterPause+5;
 			yield return new WaitForSeconds(time);
 		}
-		panel.SetActive (false);
+		panel.SetActive(false);
 
 
 	}
