@@ -22,7 +22,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 	/// <param name='activateObject'>
 	/// Activates the object before returning it.
 	/// </param>
-	static public GameObject GetNextObject(GameObject sourceObj, bool activateObject = true)
+	static public GameObject GetNextObject(GameObject sourceObj, bool activateObject)
 	{
 		int uniqueId = sourceObj.GetInstanceID();
 		
@@ -59,7 +59,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 	/// <param name='poolSize'>
 	/// The number of times it will be instantiated in the pool (i.e. the max number of same object that would appear simultaneously in your Scene).
 	/// </param>
-	static public void PreloadObject(GameObject sourceObj, int poolSize = 1)
+	static public void PreloadObject(GameObject sourceObj, int poolSize)
 	{
 		instance.addObjectToPool(sourceObj, poolSize);
 	}
