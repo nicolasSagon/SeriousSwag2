@@ -36,7 +36,6 @@ public class CharacterMaster : MonoBehaviour {
 
 	private RaycastHit hit;
 	public Camera camera;
-	public GameObject go;
 	public GameObject squirrelPrefab;
 	public GameObject chickenPrefab;
 	public GameObject enemyPrefab;
@@ -51,14 +50,15 @@ public class CharacterMaster : MonoBehaviour {
 		fpsScript = GetComponent<FirstPersonController> ();
 		castingScript = GetComponent<CharacterCasting> ();
 
-		smallList = new List<GameObject> ();
+		smallList = new List<GameObject>();
+		blackList = new List<GameObject>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Ray landingRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
-		Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
+		Debug.DrawRay (landingRay.origin,landingRay.direction*50, Color.red);
 		getInput ();
 		getTriggerPressed ();
 	}
@@ -219,7 +219,7 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.BLACKMAMBA:
 				spellsound = spellsoundBlackmamba;
-				spellBlackmamba(go);
+				spellBlackmamba(isTargetReacheable());
 				break;
 			case Spell.SMALL:
 				spellsound = spellsoundSmall;
@@ -258,6 +258,8 @@ public class CharacterMaster : MonoBehaviour {
 			smallList.Add(go);
 			if (blackList.Contains(go))
 			    blackList.Remove(go);
+			else
+				smallList.Add(go);
 		}
 
 	}
@@ -268,6 +270,8 @@ public class CharacterMaster : MonoBehaviour {
 			blackList.Add(go);
 			if (smallList.Contains(go)) 
 			    smallList.Remove(go);
+			else
+				blackList.Add(go);
 		}
 		
 	}
