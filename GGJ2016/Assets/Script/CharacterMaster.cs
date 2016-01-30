@@ -14,11 +14,29 @@ public class CharacterMaster : MonoBehaviour {
 	private bool rightCasting;
 	private bool leftCasting;
 	private bool lastCastingVal;
-	public enum Spell {WIND = 0, FIRE = 1, WATER = 2, DEATH = 3, BLACKMAMBA = 4, SMALL = 5, CHICKEN = 6, SQUIRREL = 7, ENEMY = 8, DARKNESS = 9, LIGHT = 10, RANDOM = 99};
-	public enum Movement {UPLEFT = 0, DOWNLEFT = 1, UPRIGHT = 2, DOWNRIGHT = 3, DEFAULT = 4};
+	public enum Spell {WIND = 0, FIRE = 1, WATER = 2, DEATH = 3, BLACKMAMBA = 4, SMALL = 5, CHICKEN = 6, SQUIRREL = 7, ENEMY = 8, DARKNESS = 9, LIGHT = 10, RANDOM = 99, NONE = -1};
+	public AudioClip spellsoundWind;
+	public AudioClip spellsoundFire;
+	public AudioClip spellsoundWater;
+	public AudioClip spellsoundDeath;
+	public AudioClip spellsoundBlackmamba;
+	public AudioClip spellsoundSmall;
+	public AudioClip spellsoundChicken;
+	public AudioClip spellsoundSquirrel;
+	public AudioClip spellsoundEnemy;
+	public AudioClip spellsoundDarkness;
+	public AudioClip spellsoundLight;
+	public AudioClip spellsoundRandom;
+	public AudioSource audiosource;
+
+	public GameObject pointeurLeft;
+
+	private List<GameObject> smallList;
 
 	private RaycastHit hit;
 	public Camera camera;
+	public GameObject go;
+	public GameObject squirrelPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -26,19 +44,17 @@ public class CharacterMaster : MonoBehaviour {
 		this.lastCastingVal = true;
 		fpsScript = GetComponent<FirstPersonController> ();
 		castingScript = GetComponent<CharacterCasting> ();
-		List<Movement> listMovementLeftArm = new List<Movement> ();
-		List<Movement> listMovementRightArm = new List<Movement> ();
-		listMovementLeftArm.Add (Movement.UPRIGHT);
-		listMovementLeftArm.Add (Movement.UPLEFT);
-		listMovementLeftArm.Add (Movement.DOWNLEFT);
-		Debug.Log(getSpell(listMovementLeftArm, listMovementRightArm));
+
+		smallList = new List<GameObject> ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Ray landingRay = camera.ScreenPointToRay (Input.mousePosition);
-		Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
+		//Ray landingRay = camera.ScreenPointToRay (Input.mousePosition);
+		//Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
 		getInput ();
+		getInputLeft ();
 		getTriggerPressed ();
 	}
 
@@ -60,20 +76,16 @@ public class CharacterMaster : MonoBehaviour {
 			fpsScript.isActive = !isCasting;
 			castingScript.isActive = isCasting;
 			if(lastCastingVal == true && isCasting == false){
-				string movementLeft = "Left : ";
-				foreach(CharacterCasting.Movement movementId in castingScript.listMovementLeftArm){
-					movementLeft += movementId + " ";
-				}
-				if(movementLeft != "Left : ")
-					Debug.Log (movementLeft);
-
 				string movementRight = "Right : ";
-				foreach(CharacterCasting.Movement movementId in castingScript.listMovementRightArm){
+				foreach(Movement movementId in castingScript.listMovementRightArm){
 					movementRight += movementId + " ";
 				}
 				if(movementRight != "Right : ")
 					Debug.Log (movementRight);
+				Debug.Log(getSpell(castingScript.listMovementLeftArm, castingScript.listMovementRightArm));
+				launchSpell(getSpell(castingScript.listMovementLeftArm, castingScript.listMovementRightArm));
 				castingScript.initInput();
+
 			}
 			lastCastingVal = isCasting;
 		}
@@ -84,10 +96,20 @@ public class CharacterMaster : MonoBehaviour {
 		this.text.enabled = isCasting;
 	}
 
-	private void getInput(){
+	private void getInputLeft(){
 		
 		float vertical = CrossPlatformInputManager.GetAxis ("Vertical");
 		float horizontal = CrossPlatformInputManager.GetAxis ("Horizontal");
+
+		this.pointeurLeft.GetComponent<Rigidbody> ().AddForce (transform.forward * 10);
+
+	}
+
+
+	private void getInput(){
+		
+		float vertical = CrossPlatformInputManager.GetAxis ("Mouse Y");
+		float horizontal = CrossPlatformInputManager.GetAxis ("Mouse X");
 
 		this.text.text = "v : " + vertical + ", h : " + horizontal;
 		
@@ -95,13 +117,16 @@ public class CharacterMaster : MonoBehaviour {
 
 	private Spell getSpell(List<Movement> listMovementLeftArm, List<Movement> listMovementRightArm){
 		
-		Spell spell = Spell.RANDOM;
+		Spell spell = Spell.NONE;
 		int leftArmMovements = listMovementLeftArm.Count;
 		int rightArmMovements = listMovementRightArm.Count;
 		
 		// more than 10 inputs
 		if ((leftArmMovements + rightArmMovements) >= 11)
 			spell = Spell.SQUIRREL;
+		else if (leftArmMovements == 0 && rightArmMovements == 0) {
+			spell = Spell.NONE;
+		}
 		else if (leftArmMovements == 4 && rightArmMovements == 4) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT &&
 			    listMovementLeftArm [1] == Movement.DOWNLEFT &&
@@ -118,6 +143,11 @@ public class CharacterMaster : MonoBehaviour {
 			    listMovementRightArm [0] == Movement.UPRIGHT &&
 			    listMovementRightArm [1] == Movement.DOWNRIGHT)
 				spell = Spell.WATER;
+			else if (listMovementLeftArm [0] == Movement.DOWNLEFT &&
+			         listMovementLeftArm [1] == Movement.UPLEFT &&
+			         listMovementRightArm [0] == Movement.DOWNRIGHT &&
+			         listMovementRightArm [1] == Movement.UPRIGHT)
+				spell = Spell.BLACKMAMBA;
 		} else if (leftArmMovements == 1 && rightArmMovements == 0) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT)
 				spell = Spell.FIRE;
@@ -165,11 +195,78 @@ public class CharacterMaster : MonoBehaviour {
 			if (listMovementRightArm [0] == Movement.DOWNLEFT &&
 			    listMovementRightArm [1] == Movement.DOWNRIGHT &&
 			    listMovementRightArm [2] == Movement.UPRIGHT)
-				spell = Spell.DARKNESS;
+				spell = Spell.LIGHT;
 		}
 		else spell = Spell.RANDOM;
 		
 		return spell;
 	}
+
+	private void launchSpell(Spell spell) {
+
+		AudioClip spellsound = null;
+
+		switch (spell)
+		{
+			case Spell.NONE:
+				return;
+			case Spell.RANDOM:
+				spellsound = spellsoundRandom;
+				break;
+			case Spell.FIRE:
+				spellsound = spellsoundFire;
+				break;
+			case Spell.WIND:
+				spellsound = spellsoundWind;
+				break;
+			case Spell.WATER:
+				spellsound = spellsoundWater;
+				break;
+			case Spell.DEATH:
+				spellsound = spellsoundDeath;
+				break;
+			case Spell.BLACKMAMBA:
+				spellsound = spellsoundBlackmamba;
+				break;
+			case Spell.SMALL:
+				spellsound = spellsoundSmall;
+				spellSmall(go);
+				break;
+			case Spell.CHICKEN:
+				spellsound = spellsoundChicken;
+				break;
+			case Spell.SQUIRREL:
+				spellsound = spellsoundSquirrel;
+				spellSquirrel();
+				break;
+			case Spell.ENEMY:
+				spellsound = spellsoundEnemy;
+				break;
+			case Spell.DARKNESS:
+				spellsound = spellsoundDarkness;
+				break;
+			case Spell.LIGHT:
+				spellsound = spellsoundLight;
+				break;
+
+			default:
+				return;
+		}
+		audiosource.PlayOneShot(spellsound);
+	}
+
+	private void spellSmall(GameObject go) {
+		if (!smallList.Contains (go)) {
+			go.transform.localScale -= new Vector3 (0.8F * go.transform.localScale.x, 0.8F * go.transform.localScale.y, 0.8F * go.transform.localScale.z);
+			smallList.Add(go);
+		}
+
+	}
+
+	private void spellSquirrel() {
+		Instantiate (squirrelPrefab, transform.position+(transform.forward*2.0F), Quaternion.identity);
+		
+	}
+
 
 }

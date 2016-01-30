@@ -3,6 +3,8 @@ using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using System.Collections.Generic;
 
+public enum Movement {UPLEFT = 0, DOWNLEFT = 1, UPRIGHT = 2, DOWNRIGHT = 3, DEFAULT = 4};
+
 public class CharacterCasting : MonoBehaviour {
 
 	public bool isActive { get; set; }
@@ -14,7 +16,7 @@ public class CharacterCasting : MonoBehaviour {
 	private Movement lastInputRight { get; set; }
 	private Movement inputRight{ get; set; }
 
-	public enum Movement {UPLEFT = 0, DOWNLEFT = 1, UPRIGHT = 2, DOWNRIGHT = 3, DEFAULT = 4};
+
 	public List<Movement> listMovementLeftArm;
 	public List<Movement> listMovementRightArm;
 
