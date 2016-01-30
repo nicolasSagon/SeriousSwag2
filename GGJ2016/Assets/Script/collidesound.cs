@@ -4,8 +4,8 @@ using System.Collections;
 public class collidesound : MonoBehaviour {
 
 	public AudioSource Audio;
-	public AudioClip floorclip;
-	public AudioClip playerclip;
+	public AudioClip clip;
+	public ParticleSystem explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -21,13 +21,10 @@ public class collidesound : MonoBehaviour {
 
 	
 	void OnCollisionEnter(Collision c) {
-		
-		if (c.gameObject.name == "floor") {
-			Audio.PlayOneShot(floorclip);
-		}
-		else if (c.gameObject.name == "player") {
-			Audio.PlayOneShot(playerclip);
-		}
+		ParticleSystem boom = (ParticleSystem)Instantiate(explosion, transform.position, Quaternion.identity);
+		boom.Play ();
+		Audio.PlayOneShot(clip);
+		Destroy ();
 	}
 
 }
