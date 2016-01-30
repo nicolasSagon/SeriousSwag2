@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 79cfe69b08687884fad844862cfabd16
-timeCreated: 1454183056
+guid: b08391b5cfc34af49a099cfefca43851
+timeCreated: 1454185510
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -57,10 +57,9 @@ ModelImporter:
     400046: left_hand
     400048: left_thumb1
     400050: left_thumb2
-    2300000: Circle002
-    3300000: Circle002
     4300000: Circle002
     9500000: //RootNode
+    13700000: Circle002
   materials:
     importMaterials: 1
     materialName: 0
