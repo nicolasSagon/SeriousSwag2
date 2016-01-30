@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
@@ -11,6 +11,8 @@ public class CharacterMaster : MonoBehaviour {
 	public Text text;
 	private bool isCasting;
 	private bool lastCastingVal;
+	private RaycastHit hit;
+	public Camera camera;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +24,9 @@ public class CharacterMaster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Ray landingRay = camera.ScreenPointToRay (Input.mousePosition);
+		Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
 		getInput ();
-
 		getTriggerPressed ();
 	}
 
