@@ -29,6 +29,8 @@ public class CharacterMaster : MonoBehaviour {
 	public AudioClip spellsoundRandom;
 	public AudioSource audiosource;
 
+	public GameObject cameraPoint;
+
 	private List<GameObject> smallList;
 
 	private RaycastHit hit;
@@ -54,8 +56,8 @@ public class CharacterMaster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Ray landingRay = camera.ScreenPointToRay (Input.mousePosition);
-		//Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
+		Ray landingRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
+		Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
 		getInput ();
 		getTriggerPressed ();
 	}
@@ -232,7 +234,7 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.SMALL:
 				spellsound = spellsoundSmall;
-				spellSmall(go);
+				spellSmall(isTargetReacheable());
 				break;
 			case Spell.CHICKEN:
 				spellsound = spellsoundChicken;
@@ -260,7 +262,7 @@ public class CharacterMaster : MonoBehaviour {
 	}
 
 	private void spellSmall(GameObject go) {
-		if (!smallList.Contains (go)) {
+		if (go != null && !smallList.Contains (go)) {
 			go.transform.localScale -= new Vector3 (0.8F * go.transform.localScale.x, 0.8F * go.transform.localScale.y, 0.8F * go.transform.localScale.z);
 			smallList.Add(go);
 		}
@@ -296,5 +298,16 @@ public class CharacterMaster : MonoBehaviour {
 		yield return new WaitForSeconds(5F);
 		Destroy(go);
 	}
+
+	public GameObject isTargetReacheable(){
+		RaycastHit hit;
+		Ray landingRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
+		if(Physics.Raycast(landingRay,out hit,5)){
+			if(hit.collider.tag == "target")
+				return hit.transform.gameObject;
+		}
+		return null;
+	}
+
 
 }
