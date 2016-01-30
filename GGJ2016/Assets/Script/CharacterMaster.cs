@@ -12,14 +12,11 @@ public class CharacterMaster : MonoBehaviour {
 	public Text text;
 	private bool isCasting;
 	private bool lastCastingVal;
-<<<<<<< HEAD
 	public enum Spell {WIND = 0, FIRE = 1, WATER = 2, DEATH = 3, BLACKMAMBA = 4, SMALL = 5, CHICKEN = 6, SQUIRREL = 7, ENEMY = 8, DARKNESS = 9, LIGHT = 10, RANDOM = 99};
 	public enum Movement {UPLEFT = 0, DOWNLEFT = 1, UPRIGHT = 2, DOWNRIGHT = 3, DEFAULT = 4};
 
-=======
 	private RaycastHit hit;
 	public Camera camera;
->>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {
