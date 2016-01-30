@@ -130,78 +130,61 @@ public class CharacterMaster : MonoBehaviour {
 			spell = Spell.SQUIRREL;
 		else if (leftArmMovements == 0 && rightArmMovements == 0) {
 			spell = Spell.NONE;
-		}
-		else if (leftArmMovements == 4 && rightArmMovements == 4) {
-			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-			    listMovementLeftArm [1] == Movement.DOWNLEFT &&
-			    listMovementLeftArm [2] == Movement.UPLEFT &&
-			    listMovementLeftArm [3] == Movement.DOWNLEFT &&
-			    listMovementRightArm [0] == Movement.DOWNRIGHT &&
-			    listMovementRightArm [1] == Movement.UPRIGHT &&
-			    listMovementRightArm [2] == Movement.DOWNRIGHT &&
-			    listMovementRightArm [3] == Movement.UPRIGHT)
-				spell = Spell.WIND;
 		} else if (leftArmMovements == 2 && rightArmMovements == 2) {
-			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-			    listMovementLeftArm [1] == Movement.DOWNLEFT &&
-			    listMovementRightArm [0] == Movement.UPRIGHT &&
-			    listMovementRightArm [1] == Movement.DOWNRIGHT)
-				spell = Spell.WATER;
-			else if (listMovementLeftArm [0] == Movement.DOWNLEFT &&
-			         listMovementLeftArm [1] == Movement.UPLEFT &&
-			         listMovementRightArm [0] == Movement.DOWNRIGHT &&
-			         listMovementRightArm [1] == Movement.UPRIGHT)
+			if (listMovementLeftArm [0] == Movement.DOWNLEFT &&
+				listMovementLeftArm [1] == Movement.UPLEFT &&
+				listMovementRightArm [0] == Movement.DOWNRIGHT &&
+				listMovementRightArm [1] == Movement.UPRIGHT)
 				spell = Spell.BLACKMAMBA;
+			else if (listMovementLeftArm [0] == Movement.UPLEFT &&
+				listMovementLeftArm [1] == Movement.DOWNLEFT &&
+				listMovementRightArm [0] == Movement.DOWNRIGHT &&
+				listMovementRightArm [1] == Movement.UPRIGHT)
+				spell = Spell.WIND;
 		} else if (leftArmMovements == 1 && rightArmMovements == 0) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT)
 				spell = Spell.FIRE;
 		} else if (leftArmMovements == 0 && rightArmMovements == 1) {
 			if (listMovementRightArm [0] == Movement.UPRIGHT)
-				spell = Spell.FIRE;
+				spell = Spell.WATER;
 		} else if (leftArmMovements == 1 && rightArmMovements == 1) {
 			if (listMovementRightArm [0] == Movement.UPLEFT &&
-			    listMovementLeftArm [0] == Movement.UPRIGHT)
+				listMovementLeftArm [0] == Movement.UPRIGHT)
 				spell = Spell.DEATH;
 		} else if (leftArmMovements == 2 && rightArmMovements == 0) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-			    listMovementLeftArm [1] == Movement.DOWNLEFT)
+				listMovementLeftArm [1] == Movement.DOWNLEFT)
 				spell = Spell.SMALL;
-		} else if (leftArmMovements == 0 && rightArmMovements == 2) {
-			if (listMovementRightArm [0] == Movement.UPRIGHT &&
-			    listMovementRightArm [1] == Movement.DOWNRIGHT)
-				spell = Spell.SMALL;
-		} else if (leftArmMovements == 3 && rightArmMovements == 3) {
+		} else if (leftArmMovements == 2 && rightArmMovements == 2) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-			    listMovementLeftArm [1] == Movement.UPRIGHT &&
-			    listMovementLeftArm [2] == Movement.UPLEFT &&
-			    listMovementRightArm [0] == Movement.DOWNRIGHT &&
-			    listMovementRightArm [1] == Movement.DOWNLEFT &&
-			    listMovementRightArm [2] == Movement.DOWNRIGHT)
+				listMovementLeftArm [1] == Movement.UPRIGHT &&
+				listMovementRightArm [0] == Movement.DOWNRIGHT &&
+				listMovementRightArm [1] == Movement.DOWNLEFT)
 				spell = Spell.CHICKEN;
 		} else if (leftArmMovements == 5 && rightArmMovements == 5) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-			    listMovementLeftArm [1] == Movement.DOWNLEFT &&
-			    listMovementLeftArm [2] == Movement.DOWNRIGHT &&
-			    listMovementLeftArm [3] == Movement.UPRIGHT &&
-			    listMovementLeftArm [4] == Movement.UPLEFT &&
-			    listMovementRightArm [0] == Movement.UPRIGHT &&
-			    listMovementRightArm [1] == Movement.UPLEFT &&
-			    listMovementRightArm [2] == Movement.DOWNLEFT &&
-			    listMovementRightArm [3] == Movement.DOWNRIGHT &&
-			    listMovementRightArm [4] == Movement.UPRIGHT)
+				listMovementLeftArm [1] == Movement.DOWNLEFT &&
+				listMovementLeftArm [2] == Movement.DOWNRIGHT &&
+				listMovementLeftArm [3] == Movement.UPRIGHT &&
+				listMovementLeftArm [4] == Movement.UPLEFT &&
+				listMovementRightArm [0] == Movement.UPLEFT &&
+				listMovementRightArm [1] == Movement.DOWNLEFT &&
+				listMovementRightArm [2] == Movement.DOWNRIGHT &&
+				listMovementRightArm [3] == Movement.UPRIGHT &&
+				listMovementRightArm [4] == Movement.UPLEFT)
 				spell = Spell.ENEMY;
 		} else if (leftArmMovements == 3 && rightArmMovements == 0) {
 			if (listMovementLeftArm [0] == Movement.UPRIGHT &&
-			    listMovementLeftArm [1] == Movement.UPLEFT &&
-			    listMovementLeftArm [2] == Movement.DOWNLEFT)
+				listMovementLeftArm [1] == Movement.UPLEFT &&
+				listMovementLeftArm [2] == Movement.DOWNLEFT)
 				spell = Spell.DARKNESS;
 		} else if (leftArmMovements == 0 && rightArmMovements == 3) {
 			if (listMovementRightArm [0] == Movement.DOWNLEFT &&
-			    listMovementRightArm [1] == Movement.DOWNRIGHT &&
-			    listMovementRightArm [2] == Movement.UPRIGHT)
+				listMovementRightArm [1] == Movement.DOWNRIGHT &&
+				listMovementRightArm [2] == Movement.UPRIGHT)
 				spell = Spell.LIGHT;
-		}
-		else spell = Spell.RANDOM;
+		} else
+				spell = Spell.RANDOM;
 		
 		return spell;
 	}
@@ -216,6 +199,7 @@ public class CharacterMaster : MonoBehaviour {
 				return;
 			case Spell.RANDOM:
 				spellsound = spellsoundRandom;
+				spellRandom();
 				break;
 			case Spell.FIRE:
 				spellsound = spellsoundFire;
@@ -223,17 +207,20 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.WIND:
 				spellsound = spellsoundWind;
+				spellWind();
 				break;
 			case Spell.WATER:
 				spellsound = spellsoundWater;
+				spellWater();
 				break;
 			case Spell.DEATH:
 				spellsound = spellsoundDeath;
+				spellDeath();
 				break;
 			case Spell.BLACKMAMBA:
 				spellsound = spellsoundBlackmamba;
 				spellBlackmamba(go);
-			break;
+				break;
 			case Spell.SMALL:
 				spellsound = spellsoundSmall;
 				spellSmall(isTargetReacheable());
@@ -252,9 +239,11 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.DARKNESS:
 				spellsound = spellsoundDarkness;
+				spellDarkness();
 				break;
 			case Spell.LIGHT:
 				spellsound = spellsoundLight;
+				spellLight();
 				break;
 
 			default:
@@ -265,7 +254,7 @@ public class CharacterMaster : MonoBehaviour {
 
 	private void spellSmall(GameObject go) {
 		if (go != null && !smallList.Contains (go)) {
-			go.transform.localScale -= new Vector3 (0.8F * go.transform.localScale.x, 0.8F * go.transform.localScale.y, 0.8F * go.transform.localScale.z);
+			go.transform.localScale -= new Vector3 (0.75F * go.transform.localScale.x, 0.75F * go.transform.localScale.y, 0.75F * go.transform.localScale.z);
 			smallList.Add(go);
 			if (blackList.Contains(go))
 			    blackList.Remove(go);
@@ -274,8 +263,8 @@ public class CharacterMaster : MonoBehaviour {
 	}
 	
 	private void spellBlackmamba(GameObject go) {
-		if (!blackList.Contains (go)) {
-			go.transform.localScale += new Vector3 (0.8F * go.transform.localScale.x, 0.8F * go.transform.localScale.y, 0.8F * go.transform.localScale.z);
+		if (go != null && !blackList.Contains (go)) {
+			go.transform.localScale += new Vector3 (3F * go.transform.localScale.x, 3F * go.transform.localScale.y, 3F * go.transform.localScale.z);
 			blackList.Add(go);
 			if (smallList.Contains(go)) 
 			    smallList.Remove(go);
@@ -316,12 +305,33 @@ public class CharacterMaster : MonoBehaviour {
 	public GameObject isTargetReacheable(){
 		RaycastHit hit;
 		Ray landingRay = new Ray (Camera.main.transform.position, Camera.main.transform.forward);
-		if(Physics.Raycast(landingRay,out hit,5)){
+		if(Physics.Raycast(landingRay,out hit,50)){
 			if(hit.collider.tag == "target")
 				return hit.transform.gameObject;
 		}
 		return null;
 	}
+
+	private void spellDarkness() {
+		
+	}
+
+	private void spellLight() {
+		
+	}
+
+	private void spellDeath() {
+			
+	}
+
+	private void spellWind() {
+			
+	}
+
+	private void spellRandom() {
+			
+	}
+
 
 
 }
