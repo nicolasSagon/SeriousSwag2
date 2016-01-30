@@ -42,6 +42,7 @@ public class CharacterMaster : MonoBehaviour {
 	public GameObject fireBallPrefab;
 
 	public ParticleSystem water;
+	public ParticleSystem wind;
 
 	// Use this for initialization
 	void Start () {
@@ -294,7 +295,6 @@ public class CharacterMaster : MonoBehaviour {
 	
 	private void spellWater() {
 		ParticleSystem rain = (ParticleSystem)Instantiate(water, transform.position+(transform.forward*2.0F), Quaternion.identity);
-		rain.transform.rotation = new Quaternion (90F,0F,0F,0F);
 		rain.Play ();
 	}
 	
@@ -327,6 +327,8 @@ public class CharacterMaster : MonoBehaviour {
 	}
 
 	private void spellWind() {
+		ParticleSystem rain = (ParticleSystem)Instantiate(water, transform.position+(transform.forward*2.0F), Quaternion.identity);
+		rain.Play ();
 			
 	}
 
