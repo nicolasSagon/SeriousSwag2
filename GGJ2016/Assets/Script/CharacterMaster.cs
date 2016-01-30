@@ -86,8 +86,7 @@ public class CharacterMaster : MonoBehaviour {
 					movementRight += movementId + " ";
 				}
 				if(movementRight != "Right : ")
-					Debug.Log (movementRight);
-				Debug.Log(getSpell(castingScript.listMovementLeftArm, castingScript.listMovementRightArm));
+				Debug.Log (getSpell(castingScript.listMovementLeftArm, castingScript.listMovementRightArm));
 				launchSpell(getSpell(castingScript.listMovementLeftArm, castingScript.listMovementRightArm));
 				castingScript.initInput();
 
@@ -255,7 +254,6 @@ public class CharacterMaster : MonoBehaviour {
 	private void spellSmall(GameObject go) {
 		if (go != null && !smallList.Contains (go)) {
 			go.transform.localScale -= new Vector3 (0.75F * go.transform.localScale.x, 0.75F * go.transform.localScale.y, 0.75F * go.transform.localScale.z);
-			smallList.Add(go);
 			if (blackList.Contains(go))
 			    blackList.Remove(go);
 			else
@@ -267,7 +265,6 @@ public class CharacterMaster : MonoBehaviour {
 	private void spellBlackmamba(GameObject go) {
 		if (go != null && !blackList.Contains (go)) {
 			go.transform.localScale += new Vector3 (3F * go.transform.localScale.x, 3F * go.transform.localScale.y, 3F * go.transform.localScale.z);
-			blackList.Add(go);
 			if (smallList.Contains(go)) 
 			    smallList.Remove(go);
 			else
@@ -290,14 +287,15 @@ public class CharacterMaster : MonoBehaviour {
 	
 	private void spellFire() {
 		GameObject fireball = (GameObject)Instantiate (fireBallPrefab, transform.position + (transform.forward * 2.0F), Quaternion.identity);
-		fireball.GetComponent<Rigidbody> ().AddRelativeForce (transform.forward * 1000F);
+		fireball.GetComponent<Rigidbody> ().AddRelativeForce (Camera.main.transform.forward * 1000F);
 
 		StartCoroutine (spellFireTimer(fireball));
 	}
 	
 	private void spellWater() {
-		GameObject rain = (GameObject)Instantiate(water, transform.position+(transform.forward*2.0F), Quaternion.identity);
-		rain.GetComponent<ParticleSystem> ().Play ();
+		ParticleSystem rain = (ParticleSystem)Instantiate(water, transform.position+(transform.forward*2.0F), Quaternion.identity);
+		rain.transform.rotation = new Quaternion (90F,0F,0F,0F);
+		rain.Play ();
 	}
 	
 	IEnumerator spellFireTimer(GameObject go)
