@@ -236,6 +236,7 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.CHICKEN:
 				spellsound = spellsoundChicken;
+				spellChicken();
 				break;
 			case Spell.SQUIRREL:
 				spellsound = spellsoundSquirrel;
@@ -243,6 +244,7 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.ENEMY:
 				spellsound = spellsoundEnemy;
+				spellEnemy();
 				break;
 			case Spell.DARKNESS:
 				spellsound = spellsoundDarkness;
