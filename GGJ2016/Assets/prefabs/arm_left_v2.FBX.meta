@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: 79cfe69b08687884fad844862cfabd16
+timeCreated: 1454183056
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Circle002
+    100004: left_arm_bone1
+    100006: left_arm_bone2
+    100008: left_cloth_l_1(mirrored)
+    100010: left_cloth_l_2
+    100012: left_cloth_l_3
+    100014: left_cloth_l_4
+    100016: left_cloth_r_1
+    100018: left_cloth_r_2
+    100020: left_cloth_r_3
+    100022: left_finger1_1
+    100024: left_finger1_2
+    100026: left_finger1_3
+    100028: left_finger2_1
+    100030: left_finger2_2
+    100032: left_finger2_3
+    100034: left_finger3_1
+    100036: left_finger3_2
+    100038: left_finger3_3
+    100040: left_finger4_1
+    100042: left_finger4_2
+    100044: left_finger4_3
+    100046: left_hand
+    100048: left_thumb1
+    100050: left_thumb2
+    400000: //RootNode
+    400002: Circle002
+    400004: left_arm_bone1
+    400006: left_arm_bone2
+    400008: left_cloth_l_1(mirrored)
+    400010: left_cloth_l_2
+    400012: left_cloth_l_3
+    400014: left_cloth_l_4
+    400016: left_cloth_r_1
+    400018: left_cloth_r_2
+    400020: left_cloth_r_3
+    400022: left_finger1_1
+    400024: left_finger1_2
+    400026: left_finger1_3
+    400028: left_finger2_1
+    400030: left_finger2_2
+    400032: left_finger2_3
+    400034: left_finger3_1
+    400036: left_finger3_2
+    400038: left_finger3_3
+    400040: left_finger4_1
+    400042: left_finger4_2
+    400044: left_finger4_3
+    400046: left_hand
+    400048: left_thumb1
+    400050: left_thumb2
+    2300000: Circle002
+    3300000: Circle002
+    4300000: Circle002
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
