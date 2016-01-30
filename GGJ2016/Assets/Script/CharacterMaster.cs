@@ -32,6 +32,7 @@ public class CharacterMaster : MonoBehaviour {
 	public GameObject cameraPoint;
 
 	private List<GameObject> smallList;
+	private List<GameObject> blackList;
 
 	private RaycastHit hit;
 	public Camera camera;
@@ -231,7 +232,8 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.BLACKMAMBA:
 				spellsound = spellsoundBlackmamba;
-				break;
+				spellBlackmamba(go);
+			break;
 			case Spell.SMALL:
 				spellsound = spellsoundSmall;
 				spellSmall(isTargetReacheable());
@@ -265,8 +267,20 @@ public class CharacterMaster : MonoBehaviour {
 		if (go != null && !smallList.Contains (go)) {
 			go.transform.localScale -= new Vector3 (0.8F * go.transform.localScale.x, 0.8F * go.transform.localScale.y, 0.8F * go.transform.localScale.z);
 			smallList.Add(go);
+			if (blackList.Contains(go))
+			    blackList.Remove(go);
 		}
 
+	}
+	
+	private void spellBlackmamba(GameObject go) {
+		if (!blackList.Contains (go)) {
+			go.transform.localScale += new Vector3 (0.8F * go.transform.localScale.x, 0.8F * go.transform.localScale.y, 0.8F * go.transform.localScale.z);
+			blackList.Add(go);
+			if (smallList.Contains(go)) 
+			    smallList.Remove(go);
+		}
+		
 	}
 
 	private void spellSquirrel() {
