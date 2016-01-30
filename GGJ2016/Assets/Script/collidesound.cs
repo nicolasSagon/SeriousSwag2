@@ -3,7 +3,6 @@ using System.Collections;
 
 public class collidesound : MonoBehaviour {
 
-	public AudioSource Audio;
 	public AudioClip clip;
 	public ParticleSystem explosion;
 
@@ -21,9 +20,9 @@ public class collidesound : MonoBehaviour {
 
 	
 	void OnCollisionEnter(Collision c) {
+		AudioSource.PlayClipAtPoint (clip, this.gameObject.transform.position, 500.0F);
 		ParticleSystem boom = (ParticleSystem)Instantiate(explosion, transform.position, Quaternion.identity);
 		boom.Play ();
-		Audio.PlayOneShot(clip);
 		Destroy (this.gameObject);
 	}
 
