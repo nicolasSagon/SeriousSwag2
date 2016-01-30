@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 68488f4cd798ff240b4f844d04c7d387
+timeCreated: 1454187917
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Circle01
+    100004: right_arm_bone1
+    100006: right_arm_bone2
+    100008: right_cloth_l_1
+    100010: right_cloth_l_2
+    100012: right_cloth_l_3
+    100014: right_cloth_l_4
+    100016: right_cloth_r_1
+    100018: right_cloth_r_2
+    100020: right_finger1_1
+    100022: right_finger1_2
+    100024: right_finger1_3
+    100026: right_finger2_1
+    100028: right_finger2_2
+    100030: right_finger2_3
+    100032: right_finger3_1
+    100034: right_finger3_2
+    100036: right_finger3_3
+    100038: right_finger4_1
+    100040: right_finger4_2
+    100042: right_finger4_3
+    100044: right_hand
+    100046: right_thumb1
+    100048: right_thumb2
+    100050: rith_cloth_r_3
+    400000: //RootNode
+    400002: Circle01
+    400004: right_arm_bone1
+    400006: right_arm_bone2
+    400008: right_cloth_l_1
+    400010: right_cloth_l_2
+    400012: right_cloth_l_3
+    400014: right_cloth_l_4
+    400016: right_cloth_r_1
+    400018: right_cloth_r_2
+    400020: right_finger1_1
+    400022: right_finger1_2
+    400024: right_finger1_3
+    400026: right_finger2_1
+    400028: right_finger2_2
+    400030: right_finger2_3
+    400032: right_finger3_1
+    400034: right_finger3_2
+    400036: right_finger3_3
+    400038: right_finger4_1
+    400040: right_finger4_2
+    400042: right_finger4_3
+    400044: right_hand
+    400046: right_thumb1
+    400048: right_thumb2
+    400050: rith_cloth_r_3
+    4300000: Circle01
+    9500000: //RootNode
+    13700000: Circle01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
