@@ -11,6 +11,8 @@ public class CharacterCasting : MonoBehaviour {
 	public bool isLeft { get; set; }
 	public bool isRight { get; set; }
 
+	public float speed;
+
 	private Movement lastInputLeft { get; set; }
 	private Movement inputLeft{ get; set; }
 	private Movement lastInputRight { get; set; }
@@ -19,6 +21,9 @@ public class CharacterCasting : MonoBehaviour {
 
 	public List<Movement> listMovementLeftArm;
 	public List<Movement> listMovementRightArm;
+
+	public GameObject rightArm;
+	public GameObject leftArm;
 
 	// Use this for initialization
 	void Start () {
@@ -68,12 +73,16 @@ public class CharacterCasting : MonoBehaviour {
 
 		if ((vertical < 1 && vertical > 0) && (horizontal > -1 && horizontal < 0)) {
 			inputLeft = Movement.UPLEFT;
+			leftArm.GetComponent<Rigidbody>().AddForce(new Vector3(-1F, 1F,0) * speed, ForceMode.Force);
 		} else if ((vertical < 1 && vertical > 0) && (horizontal < 1 && horizontal > 0)) {
 			inputLeft = Movement.UPRIGHT;
+			leftArm.GetComponent<Rigidbody>().AddForce(new Vector3(1F, 1F,0) * speed, ForceMode.Force);
 		} else if ((vertical > -1 && vertical < 0) && (horizontal > -1 && horizontal < 0)) {
 			inputLeft = Movement.DOWNLEFT;
+			leftArm.GetComponent<Rigidbody>().AddForce(new Vector3(-1F, -1F,0) * speed, ForceMode.Force);
 		} else if ((vertical > -1 && vertical < 0) && (horizontal < 1 && horizontal > 0)) {
 			inputLeft = Movement.DOWNRIGHT;
+			leftArm.GetComponent<Rigidbody>().AddForce(new Vector3(1F, -1F,0) * speed, ForceMode.Force);
 		} else {
 			inputLeft = Movement.DEFAULT;
 		}
@@ -86,12 +95,16 @@ public class CharacterCasting : MonoBehaviour {
 		float horizontal = CrossPlatformInputManager.GetAxis ("Mouse X");
 		
 		if ((vertical < 1 && vertical > 0) && (horizontal > -1 && horizontal < 0)) {
+			rightArm.GetComponent<Rigidbody>().AddForce(new Vector3(-1F, 1F,0) * speed, ForceMode.Force);
 			inputRight = Movement.UPLEFT;
 		} else if ((vertical < 1 && vertical > 0) && (horizontal < 1 && horizontal > 0)) {
+			rightArm.GetComponent<Rigidbody>().AddForce(new Vector3(1F, 1F,0) * speed, ForceMode.Force);
 			inputRight = Movement.UPRIGHT;
 		} else if ((vertical > -1 && vertical < 0) && (horizontal > -1 && horizontal < 0)) {
+			rightArm.GetComponent<Rigidbody>().AddForce(new Vector3(-1F, -1F,0) * speed, ForceMode.Force);
 			inputRight = Movement.DOWNLEFT;
 		} else if ((vertical > -1 && vertical < 0) && (horizontal < 1 && horizontal > 0)) {
+			rightArm.GetComponent<Rigidbody>().AddForce(new Vector3(1F, -1F,0) * speed, ForceMode.Force);
 			inputRight = Movement.DOWNRIGHT;
 		} else {
 			inputRight = Movement.DEFAULT;
