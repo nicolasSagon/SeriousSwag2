@@ -141,6 +141,16 @@ public class CharacterMaster : MonoBehaviour {
 				listMovementRightArm [0] == Movement.DOWNRIGHT &&
 				listMovementRightArm [1] == Movement.UPRIGHT)
 				spell = Spell.WIND;
+			else if (listMovementLeftArm [0] == Movement.UPLEFT &&
+		        listMovementLeftArm [1] == Movement.DOWNLEFT &&
+		        listMovementRightArm [0] == Movement.UPRIGHT &&
+		        listMovementRightArm [1] == Movement.DOWNRIGHT)
+				spell = Spell.SMALL;
+			else if (listMovementLeftArm [0] == Movement.UPLEFT &&
+			    listMovementLeftArm [1] == Movement.UPRIGHT &&
+			    listMovementRightArm [0] == Movement.DOWNRIGHT &&
+			    listMovementRightArm [1] == Movement.DOWNLEFT)
+				spell = Spell.CHICKEN;
 		} else if (leftArmMovements == 1 && rightArmMovements == 0) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT)
 				spell = Spell.FIRE;
@@ -151,16 +161,6 @@ public class CharacterMaster : MonoBehaviour {
 			if (listMovementRightArm [0] == Movement.UPLEFT &&
 				listMovementLeftArm [0] == Movement.UPRIGHT)
 				spell = Spell.DEATH;
-		} else if (leftArmMovements == 2 && rightArmMovements == 0) {
-			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-				listMovementLeftArm [1] == Movement.DOWNLEFT)
-				spell = Spell.SMALL;
-		} else if (leftArmMovements == 2 && rightArmMovements == 2) {
-			if (listMovementLeftArm [0] == Movement.UPLEFT &&
-				listMovementLeftArm [1] == Movement.UPRIGHT &&
-				listMovementRightArm [0] == Movement.DOWNRIGHT &&
-				listMovementRightArm [1] == Movement.DOWNLEFT)
-				spell = Spell.CHICKEN;
 		} else if (leftArmMovements == 5 && rightArmMovements == 5) {
 			if (listMovementLeftArm [0] == Movement.UPLEFT &&
 				listMovementLeftArm [1] == Movement.DOWNLEFT &&
