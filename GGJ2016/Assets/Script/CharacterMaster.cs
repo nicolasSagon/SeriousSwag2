@@ -327,8 +327,8 @@ public class CharacterMaster : MonoBehaviour {
 	}
 
 	private void spellWind() {
-		ParticleSystem rain = (ParticleSystem)Instantiate(water, transform.position+(transform.forward*2.0F), Quaternion.identity);
-		rain.Play ();
+		ParticleSystem poof = (ParticleSystem)Instantiate(wind, transform.position+(transform.forward*2.0F), Quaternion.identity);
+		poof.Play ();
 			
 	}
 
