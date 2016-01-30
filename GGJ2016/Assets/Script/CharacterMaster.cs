@@ -37,6 +37,11 @@ public class CharacterMaster : MonoBehaviour {
 	public Camera camera;
 	public GameObject go;
 	public GameObject squirrelPrefab;
+	public GameObject chickenPrefab;
+	public GameObject enemyPrefab;
+	public GameObject fireBallPrefab;
+
+	public ParticleSystem water;
 
 	// Use this for initialization
 	void Start () {
@@ -98,10 +103,10 @@ public class CharacterMaster : MonoBehaviour {
 
 	private void getInputLeft(){
 		
-		float vertical = CrossPlatformInputManager.GetAxis ("Vertical");
+		/*float vertical = CrossPlatformInputManager.GetAxis ("Vertical");
 		float horizontal = CrossPlatformInputManager.GetAxis ("Horizontal");
 
-		this.pointeurLeft.GetComponent<Rigidbody> ().AddForce (transform.forward * 10);
+		this.pointeurLeft.GetComponent<Rigidbody> ().AddForce (transform.forward * 10);*/
 
 	}
 
@@ -215,6 +220,7 @@ public class CharacterMaster : MonoBehaviour {
 				break;
 			case Spell.FIRE:
 				spellsound = spellsoundFire;
+				spellFire();
 				break;
 			case Spell.WIND:
 				spellsound = spellsoundWind;
@@ -264,9 +270,33 @@ public class CharacterMaster : MonoBehaviour {
 	}
 
 	private void spellSquirrel() {
-		Instantiate (squirrelPrefab, transform.position+(transform.forward*2.0F), Quaternion.identity);
-		
+		Instantiate (squirrelPrefab, transform.position+(transform.forward*2.0F), Quaternion.identity);	
 	}
 
+	private void spellChicken() {
+		Instantiate (chickenPrefab, transform.position+(transform.forward*2.0F), Quaternion.identity);	
+	}
+
+	private void spellEnemy() {
+		Instantiate (enemyPrefab, transform.position+(transform.forward*2.0F), Quaternion.identity);	
+	}
+	
+	private void spellFire() {
+		GameObject fireball = (GameObject)Instantiate (fireBallPrefab, transform.position + (transform.forward * 2.0F), Quaternion.identity);
+		fireball.GetComponent<Rigidbody> ().AddRelativeForce (transform.forward * 1000F);
+
+		StartCoroutine (spellFireTimer(fireball));
+	}
+	
+	private void spellWater() {
+		GameObject rain = (GameObject)Instantiate(water, transform.position+(transform.forward*2.0F), Quaternion.identity);
+		rain.GetComponent<ParticleSystem> ().Play ();
+	}
+	
+	IEnumerator spellFireTimer(GameObject go)
+	{
+		yield return new WaitForSeconds(5F);
+		Destroy(go);
+	}
 
 }
