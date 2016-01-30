@@ -24,7 +24,7 @@ public class collidesound : MonoBehaviour {
 		ParticleSystem boom = (ParticleSystem)Instantiate(explosion, transform.position, Quaternion.identity);
 		boom.Play ();
 		Audio.PlayOneShot(clip);
-		Destroy ();
+		Destroy (c.gameObject);
 	}
 
 }
