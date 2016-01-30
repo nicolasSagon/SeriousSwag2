@@ -29,8 +29,6 @@ public class CharacterMaster : MonoBehaviour {
 	public AudioClip spellsoundRandom;
 	public AudioSource audiosource;
 
-	public GameObject pointeurLeft;
-
 	private List<GameObject> smallList;
 
 	private RaycastHit hit;
@@ -54,7 +52,6 @@ public class CharacterMaster : MonoBehaviour {
 		//Ray landingRay = camera.ScreenPointToRay (Input.mousePosition);
 		//Debug.DrawRay (landingRay.origin,landingRay.direction*5, Color.red);
 		getInput ();
-		getInputLeft ();
 		getTriggerPressed ();
 	}
 
@@ -95,16 +92,7 @@ public class CharacterMaster : MonoBehaviour {
 	private void setTextVisibility(){
 		this.text.enabled = isCasting;
 	}
-
-	private void getInputLeft(){
-		
-		float vertical = CrossPlatformInputManager.GetAxis ("Vertical");
-		float horizontal = CrossPlatformInputManager.GetAxis ("Horizontal");
-
-		this.pointeurLeft.GetComponent<Rigidbody> ().AddForce (transform.forward * 10);
-
-	}
-
+	
 
 	private void getInput(){
 		
