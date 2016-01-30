@@ -11,12 +11,14 @@ public class CharacterCasting : MonoBehaviour {
 
 	public enum Movement {UPLEFT = 0, DOWNLEFT = 1, UPRIGHT = 2, DOWNRIGHT = 3, DEFAULT = 4};
 	public List<Movement> listMovementLeftArm;
+	public List<Movement> listMovementRightArm;
+
 
 	// Use this for initialization
 	void Start () {
 		isActive = false;
 		listMovementLeftArm = new List<Movement> ();
-
+		listMovementRightArm = new List<Movement> ();
 	}
 	
 
@@ -56,4 +58,7 @@ public class CharacterCasting : MonoBehaviour {
 		}
 
 	}
+
+
+
 }
