@@ -29,6 +29,10 @@ public class CharacterMaster : MonoBehaviour {
 	public AudioClip spellsoundRandom;
 	public AudioSource audiosource;
 
+	public AudioClip castingSound1;
+	public AudioClip castingSound2;
+	public AudioClip castingSound3;
+
 	public GameObject cameraPoint;
 
 	private List<GameObject> smallList;
@@ -93,6 +97,17 @@ public class CharacterMaster : MonoBehaviour {
 
 			}
 			lastCastingVal = isCasting;
+			int rnd = Random.Range(1,3);
+			switch(rnd){
+			case 1: audiosource.PlayOneShot(castingSound1);
+				break;
+			case 2: audiosource.PlayOneShot(castingSound2);
+				break;
+			case 3: audiosource.PlayOneShot(castingSound3);
+				break;
+			default:
+				break;
+			}
 		}
 		
 	}
