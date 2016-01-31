@@ -1,4 +1,4 @@
-N - Hello, newcomer ! So, you are the new shaman candidate ? Well I wasn't expecting ... you ?
+﻿N - Hello, newcomer ! So, you are the new shaman candidate ? Well I wasn't expecting someone like ... you ?!
 
 S - To be honest, I was just walking my pet squirrel and then I got lost. Could you please tell me-
 
@@ -22,7 +22,7 @@ S - ???
 
 *** 1ère étape : faire grandir le champignon pour passer ***
 
-N - Damn thorns ... These old jokesters are always where you least expect them haha ! I'm sure you might be able to cut them down with a sharp enough pebble. Or find another way. This shouldn't be hard, the solution is ELEMENTAL.
+N - Damn thorns ... These old jokesters are always where you least expect them, haha ! I'm sure you might be able to cut them down with a sharp enough pebble. Or find another way. This shouldn't be hard, the solution is ELEMENTAL.
 
 S - You mean elementary, right ?
 
