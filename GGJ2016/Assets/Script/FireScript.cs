@@ -26,6 +26,7 @@ public class FireScript : MonoBehaviour {
 	IEnumerator removeThorns(){
 		yield return new WaitForSeconds (timeBeforeVanish);
 		Destroy (this.gameObject);
+		Destroy (listFx);
 	}
 
 }

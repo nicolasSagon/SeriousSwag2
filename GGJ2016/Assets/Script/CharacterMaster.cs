@@ -162,7 +162,7 @@ public class CharacterMaster : MonoBehaviour {
 		
 		
 	}
-	}
+
 	
 	private void getInputLeft(){
 		
@@ -400,7 +400,4 @@ public class CharacterMaster : MonoBehaviour {
 	private void spellRandom() {
 		
 	}
-	
-	
-	
 }
