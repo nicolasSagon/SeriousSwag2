@@ -1,0 +1,9 @@
+1:Master - Hello, newcomer ! So, you are the new shaman candidate ? Well I wasn't expecting ... you ?
+2:You - To be honest, I was just walking my pet squirrel and then I got lost. Could you please tell me?
+3:Master - Anyway, welcome to your initiation ritual. You will have to cope with horrendously challenging trials. Some are so challenging I'm not even sure they can be achieved...
+4:Master - But no worries, heh ?
+5:You - Wait, wait, there might have been a misunderstanding here...
+6:Master - To make it out of here, you will need to demonstrate your spellcasting skills.
+7:You - Spellcasting ? You mean like throwing fireballs and stuff ?
+8:Master -  I feel an incredible power in your gelatinous arms, young apprentice. Fireball should be a child's play for you.
+9:Master - Just raise your left arm while focusing very hard to explore your potential. (Press LT to enter spellcasting mode, and joysticks to move your arms.)

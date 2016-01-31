@@ -162,7 +162,6 @@ public class CharacterMaster : MonoBehaviour {
 		
 		
 	}
-	}
 	
 	private void getInputLeft(){
 		
