@@ -56,6 +56,7 @@ public class CharacterMaster : MonoBehaviour {
 	private Animation animBoat;
 
 	private bool isOnBoat;
+
 	
 	// Use this for initialization
 	void Start () {
@@ -130,6 +131,17 @@ public class CharacterMaster : MonoBehaviour {
 				
 			}
 			lastCastingVal = isCasting;
+			int rnd = Random.Range(1,3);
+			switch(rnd){
+			case 1: audiosource.PlayOneShot(castingSound1);
+				break;
+			case 2: audiosource.PlayOneShot(castingSound2);
+				break;
+			case 3: audiosource.PlayOneShot(castingSound3);
+				break;
+			default:
+				break;
+			}
 		}
 
 		if (isCasting) {
@@ -148,6 +160,8 @@ public class CharacterMaster : MonoBehaviour {
 			}
 		}
 		
+		
+	}
 	}
 	
 	private void getInputLeft(){

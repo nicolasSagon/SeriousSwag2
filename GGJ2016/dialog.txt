@@ -1,0 +1,45 @@
+﻿N - Hello, newcomer ! So, you are the new shaman candidate ? Well I wasn't expecting someone like ... you ?!
+
+S - To be honest, I was just walking my pet squirrel and then I got lost. Could you please tell me-
+
+N - Anyway, welcome to your initiation ritual. You will have to cope with horrendously challenging trials. Some are so challenging I'm not even sure they can be achieved... But no worries, heh ?
+
+S - Wait, wait, there might have been a misunderstanding here...
+ 
+N - To make it out of here, you will need to demonstrate your spellcasting skills.
+
+S - Spellcasting ? You mean like throwing fireballs and stuff ? Wow.
+
+N - I feel an incredible power in your gelatinous arms, young apprentice. Fireball should be a child's play for you. Just raise your left arm while focusing very hard to explore your potential. (Press LT to enter spellcasting mode, and joysticks to move your arms.)
+
+*** 1er tutoriel : lancer une boule de feu ***
+
+S - OMGGGGGGG THIS IS SO FAYA, MATE !
+
+N - How perspicacious... Now is the time for me to let you find your own way. If you pay close attention to your surroundings, you should be able to find clues that will help you in your quest. For your first trial, remember what our great ancestors taught us : in a fungal environment, the most adequate behavior is to PUT YOUR HANDS UP IN THE AIR.
+
+S - ???
+
+*** 1ère étape : faire grandir le champignon pour passer ***
+
+N - Damn thorns ... These old jokesters are always where you least expect them, heh ! I'm sure you might be able to cut them down with a sharp enough pebble. Or find another way. This shouldn't be hard, the solution is ELEMENTAL.
+
+S - You mean elementary, right ?
+
+N - .
+
+*** 2ème étape : bruler puis éteindre les ronces, puis souffler dans les voiles du bateau ***
+
+N - Didn't you tell me about some squirrel before ? Where is it now ? I love those lil' guys, I hope nothing happened to the poor thing.
+
+S - Heck, you're right. I wish I had some news.
+
+N - Maybe if you shook your arms hard enough, it could spot where you are, and then it'd be back in a flash !
+
+*** 3ème étape : invoquer l'écureuil mort sur la plaque de pression ***
+
+N - I can't believe you got this far so easily... Maybe I don't even have anything to teach you ... You're completely on your own for this one. Behind the great drawbridge lies a world of fascinating shamanic adventures and exciting mystical stuff. I wish you good luck for this VERY LAST trial.
+
+*** 4ème étape et fin du jeu : rétrécir les rochers pour atteindre la cible avec la boule de feu et ouvrir le pont-levis ***
+
+==> Crédits et félicitations pour la réussite du rituel d'initiation
