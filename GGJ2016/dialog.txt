@@ -8,7 +8,7 @@ S - Wait, wait, there might have been a misunderstanding here...
  
 N - To make it out of here, you will need to demonstrate your spellcasting skills.
 
-S - Spellcasting ? You mean like throwing fireballs and stuff ?
+S - Spellcasting ? You mean like throwing fireballs and stuff ? Wow.
 
 N - I feel an incredible power in your gelatinous arms, young apprentice. Fireball should be a child's play for you. Just raise your left arm while focusing very hard to explore your potential. (Press LT to enter spellcasting mode, and joysticks to move your arms.)
 
@@ -22,7 +22,7 @@ S - ???
 
 *** 1ère étape : faire grandir le champignon pour passer ***
 
-N - Damn thorns ... These old jokesters are always where you least expect them, haha ! I'm sure you might be able to cut them down with a sharp enough pebble. Or find another way. This shouldn't be hard, the solution is ELEMENTAL.
+N - Damn thorns ... These old jokesters are always where you least expect them, heh ! I'm sure you might be able to cut them down with a sharp enough pebble. Or find another way. This shouldn't be hard, the solution is ELEMENTAL.
 
 S - You mean elementary, right ?
 
