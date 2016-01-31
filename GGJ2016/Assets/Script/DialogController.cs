@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class DialogController : MonoBehaviour {
 
-	public float letterPause = 0.2f;
+	public float letterPause = 0.01f;
 	public Text textComp;
 	public TextAsset textFile;
 	public GameObject panel;
